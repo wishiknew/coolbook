@@ -15,6 +15,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.loading{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .home {
   display: flex;
   flex-flow: row wrap;
@@ -147,13 +155,6 @@
   margin: .5rem 0;
   justify-content: space-between;
   text-align: center;
-
-
-
-}
-.modal-body > div > label {
-  text-align: center;
-  vertical-align: middle;
 }
 
 .modal-body input{

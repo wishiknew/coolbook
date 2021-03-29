@@ -7,13 +7,13 @@ export default function Avataar({name}) {
   const [isLoading, setIsLoading] = useState(false);
   
   useEffect(() => {
+    setIsLoading(true);
     getAvataar();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
 
   const getAvataar = async () => {
-    setIsLoading(true);
     const res = await AppDataService.getAvataar(name);
     setAvataarSVG(res.data);
     console.log('svg', res);
@@ -24,7 +24,7 @@ export default function Avataar({name}) {
       {!isLoading ?
         <div dangerouslySetInnerHTML={{__html: `${AvataarSVG}`}} />
         : 
-        <Loading/>
+        <Loading className='loading'/>
     }
     </div>
 
