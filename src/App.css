@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap'); */
 
 * {
@@ -123,6 +123,19 @@
   overflow: hidden;
   padding: 0rem;
 }
+@media screen and (min-width: 768px) {
+  .modal-flex {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 768px) and (orientation:landscape) {
+  .modal-flex {
+    margin-top:10px;
+    height: 300px;
+    overflow: scroll;
+  }
+}
+
 
 .modal-title {
   display: flex;
