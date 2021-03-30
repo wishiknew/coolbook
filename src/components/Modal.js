@@ -1,20 +1,17 @@
 import Popup from './Popup';
 import {useState, useEffect} from 'react';
-export default function Modal ({user, setDisplayModal}) {
+export default function Modal ({user, setDisplayModal, setNewInfo}) {
   const [isEmpty, setIsEmpty] = useState(false);
-  const [name, setName] = useState(user.name);
-  const [email, setEmail] = useState(user.email);
-  const [phone, setPhone] = useState(user.phone);
-  const [website, setWebsite] = useState(user.website);
+  const [thisName, setThisName] = useState(user.name);
+  const [thisEmail, setThisEmail] = useState(user.email);
+  const [thisPhone, setThisPhone] = useState(user.phone);
+  const [thisWebsite, setThisWebsite] = useState(user.website);
+  
 
-
-  const onOk = () => {
-    if(name.length > 0 && email.length> 0 && phone.length>0 && website.length> 0 ) {
+  const onOk = (e) => {
+    if(thisName.length > 0 && thisEmail.length> 0 && thisPhone.length>0 && thisWebsite.length> 0 ) {
       setDisplayModal(false);
-      user.name = name;
-      user.email = email;
-      user.phone = phone;
-      user.website = website;
+      setNewInfo(thisName, thisEmail, thisPhone, thisWebsite)
     }
     setIsEmpty(true);
     
@@ -40,20 +37,20 @@ export default function Modal ({user, setDisplayModal}) {
           <div>
           <label required> Name</label>
            
-           <input type='text' defaultValue={name} onChange={(e)=> {setName(e.target.value)}}/>
+           <input type='text' defaultValue={thisName} onChange={(e)=> {setThisName(e.target.value)}}/>
 
           </div>
           <div> <label  required>
             Email</label>
-          <input type='email'  defaultValue={email} onChange={(e)=> {setEmail(e.target.value)}}/></div>
+          <input type='email'  defaultValue={thisEmail} onChange={(e)=> {setThisEmail(e.target.value)}}/></div>
           <div>
           <label required>
             Phone</label>
-          <input type='text'  defaultValue={phone} onChange={(e)=> {setPhone(e.target.value)}}/></div>
+          <input type='text'  defaultValue={thisPhone} onChange={(e)=> {setThisPhone(e.target.value)}}/></div>
           <div> 
             <label  required>
             Website</label>
-          <input type='text'  defaultValue={website} onChange={(e)=> {setWebsite(e.target.value)}}/></div>
+          <input type='text'  defaultValue={thisWebsite} onChange={(e)=> {setThisWebsite(e.target.value)}}/></div>
           
         </div>
         <div className='modal-footer'>
