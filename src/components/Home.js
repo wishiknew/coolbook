@@ -16,7 +16,6 @@ export default function Home () {
   const getUsersData = async () => {
     
     const res = await AppDataService.getUsersData();
-    console.log(res);
     setUsersData(res.data);
     setIsLoading(false);
   }

@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import Modal from './Modal';
-export default function Footer ({user,setNewInfo}) {
+export default function Footer ({name, phone, email, website, setNewInfo}) {
   const [displayModal, setDisplayModal] = useState(false);
   const toggleLike = (e) => {
     if (e.target.className === "far fa-heart fa-lg"){
@@ -29,7 +29,7 @@ export default function Footer ({user,setNewInfo}) {
     <hr/>
     <i className="fas fa-trash fa-lg" onClick={deleteCard}></i>
     {
-      displayModal && <Modal user={user} setDisplayModal={setDisplayModal} setNewInfo={setNewInfo}/>
+      displayModal && <Modal name={name} email={email} phone={phone} website={website} setDisplayModal={setDisplayModal} setNewInfo={setNewInfo}/>
     }
   </div>
   )
