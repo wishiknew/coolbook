@@ -3,6 +3,8 @@ import Info from './Info';
 import Footer from './Footer';
 import {useState} from 'react';
 export default function ProfileCard ({user}) {  
+  const [showCard, setShowCard] = useState(true);
+
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
   const [phone, setPhone] = useState(user.phone);
@@ -15,10 +17,11 @@ export default function ProfileCard ({user}) {
   }
 
   return (
+    showCard && 
     <div className="profile-card">
-      <Avataar  name={name} />
+      <Avataar  name={user.name} />
       <Info name={name} email={email} phone={phone} website={website} />
-      <Footer name={name} email={email} phone={phone} website={website} setNewInfo={setNewInfo}/>
+      <Footer name={name} email={email} phone={phone} website={website} setNewInfo={setNewInfo} setShowCard={setShowCard} />
     </div>
   )
 }

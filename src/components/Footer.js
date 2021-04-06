@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import Modal from './Modal';
-export default function Footer ({name, phone, email, website, setNewInfo}) {
+export default function Footer ({name, phone, email, website, setNewInfo, setShowCard}) {
   const [displayModal, setDisplayModal] = useState(false);
   const toggleLike = (e) => {
     if (e.target.className === "far fa-heart fa-lg"){
@@ -11,9 +11,10 @@ export default function Footer ({name, phone, email, website, setNewInfo}) {
   }
 
   const deleteCard = (e) => {
-  e.target.parentElement.parentElement.setAttribute('id', 'delete');
-  const gone = document.getElementById('delete');
-  gone.parentNode.removeChild(gone)
+    setShowCard(false);
+  // e.target.parentElement.parentElement.setAttribute('id', 'delete');
+  // const gone = document.getElementById('delete');
+  // gone.parentNode.removeChild(gone)
   }
 
   

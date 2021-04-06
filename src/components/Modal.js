@@ -25,6 +25,7 @@ export default function Modal ({name, email, phone, website, setDisplayModal, se
   return (
     <div className='modal-fixed'>
       <div className='modal-flex'>
+        <form onSubmit={onOk}>
         <div className='modal-title'>
           <h2> Edit User Details</h2>
           <i className="far fa-times" onClick={onClose}></i>
@@ -49,8 +50,9 @@ export default function Modal ({name, email, phone, website, setDisplayModal, se
         </div>
         <div className='modal-footer'>
           <input type='button' value='Cancel' onClick={onCancel} />
-          <input type='button' value='OK' className='ok-button' onClick={onOk} />
+          <input type='submit' value='OK' className='ok-button' />
         </div>
+        </form> 
       </div>
     </div>
   )
